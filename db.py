@@ -13,10 +13,10 @@ def init_db():
                 user_id INTEGER NOT NULL,
                 username TEXT,
                 full_name TEXT,
-                category TEXT NOT NULL,  -- 'tech' или 'sales'
+                category TEXT NOT NULL,
                 message TEXT NOT NULL,
                 status TEXT DEFAULT 'open',
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)
             """)
         
         conn.commit()
@@ -70,3 +70,4 @@ def get_open_tickets(category=None):
             )
         rows = cur.fetchall()
     return rows
+
